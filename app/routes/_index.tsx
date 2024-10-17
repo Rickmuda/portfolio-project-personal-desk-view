@@ -17,7 +17,7 @@ const DeskSetup: React.FC = () => {
       {/* Center monitor with GIF */}
       <div className="monitor center-monitor">
         <img
-          src="/images/rickambergen.gif"
+          src="/public/images/rickambergen.gif"
           alt="GIF on Center Screen"
           className="center-gif"
         />
