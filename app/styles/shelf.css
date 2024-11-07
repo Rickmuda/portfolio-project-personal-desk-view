@@ -1,0 +1,53 @@
+.section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center; /* Center the shelf horizontally */
+  align-items: center; /* Center the shelf vertically */
+  background-color: #2c2c2c; /* Darker shade of gray for the background */
+}
+
+.shelf {
+  position: relative;
+  width: 1500px; /* Increase the width by 75% */
+  height: 500px; /* Increase the height by 75% */
+  background-color: #000000; /* Black color for the shelf */
+  border-top: 5px solid #333333; /* Darker gray for the shelf edge */
+  background: linear-gradient(to bottom, #000000, #333333); /* Gradient for depth */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+}
+
+.shelf::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Increase the height of the front panel */
+  background-color: #1a1a1a; /* Darker color for the front panel */
+  border-top: 5px solid #333333; /* Darker gray for the front panel edge */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+}
+
+.shelf::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px; /* Height of the bottom shadow */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for the shadow */
+  transform: translateY(80px); /* Position the shadow below the front panel */
+  filter: blur(10px); /* Blur the shadow for a softer look */
+}
+
+.character {
+  position: absolute;
+  bottom: 0;
+  transition: left 0.1s linear;
+}
+
+.character img {
+  height: 262.5px; /* Increase the height by 75% */
+}

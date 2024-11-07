@@ -2,6 +2,10 @@ import { LoaderFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { PrismaClient } from "@prisma/client";
 
+import projectsStyles from "../styles/projects.css"; // Import Projects CSS
+
+export const links = () => [{ rel: "stylesheet", href: projectsStyles }];
+
 const prisma = new PrismaClient();
 
 export const loader: LoaderFunction = async () => {
@@ -9,8 +13,18 @@ export const loader: LoaderFunction = async () => {
   return { projects };
 };
 
+type LoaderData = {
+  projects: {
+    id: number;
+    imageUrl: string;
+    title: string;
+    description: string;
+    url: string;
+  }[];
+};
+
 export default function Projects() {
-  const { projects } = useLoaderData();
+  const { projects } = useLoaderData<LoaderData>();
 
   return (
     <div>
